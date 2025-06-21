@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --background-start-rgb: 240, 242, 245;
+  --background-end-rgb: 229, 231, 235;
+  --foreground-rgb: 17, 24, 39;
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --primary-accent: #007aff;
+  --primary-accent-hover: #005ecb;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom right,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    )
+    no-repeat;
+  overflow: hidden;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass-effect {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.input-glow {
+  box-shadow: 0 0 0 2px transparent;
+  transition: all 0.3s ease;
+}
+
+.input-glow:focus {
+  box-shadow: 0 0 0 2px var(--primary-accent);
+}
+
+.btn-primary {
+  background-color: var(--primary-accent);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-accent-hover);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-accent), 0 0 0 4px rgba(0, 122, 255, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.message-user {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 20px 20px 5px 20px;
+}
+
+.message-assistant {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px 20px 20px 5px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.prose code {
+  font-size: 0.875rem;
+}
+
+.prose pre {
+  background-color: rgba(31, 41, 55, 0.05);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
